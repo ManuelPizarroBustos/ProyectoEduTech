@@ -19,7 +19,7 @@ public class UsuarioService{
     private UsuarioRepository usuarioRepository;
 
     public List<Usuario> obtenerTodos(){
-        return usuarioRepository.findById(id).orElse(null);
+        return usuarioRepository.findAll();
     }
 
     public Usuario obtenerPorId(int id){
@@ -28,7 +28,7 @@ public class UsuarioService{
 
     public Usuario registrar(UsuarioCreate usuario){
         try {
-            User nuevoUsuario = new User();
+            Usuario nuevoUsuario = new Usuario();
             nuevoUsuario.setNombre(usuario.getNombre());
             nuevoUsuario.setEmail(usuario.getEmail());
             nuevoUsuario.setTelefono(usuario.getTelefono());

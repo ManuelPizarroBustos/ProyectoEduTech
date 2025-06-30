@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.api_usuarios.models.entities.Inscripcion;
-import com.example.api_usuarios.models.requests.InscripcionCreate;
-import com.example.api_usuarios.models.requests.InscripcionUpdate;
-import com.example.api_usuarios.repositories.InscripcionRepository;
+import com.example.api_inscripciones.models.entities.Inscripcion;
+import com.example.api_inscripciones.models.requests.InscripcionCreate;
+import com.example.api_inscripciones.models.requests.InscripcionUpdate;
+import com.example.api_inscripciones.repositories.InscripcionRepository;
 
 @Service
 public class InscripcionService{
@@ -19,7 +19,7 @@ public class InscripcionService{
     private InscripcionRepository inscripcionRepository;
 
     public List<Inscripcion> obtenerTodos(){
-        return inscripcionRepository.findById(id).orElse(null);
+        return inscripcionRepository.findAll();
     }
 
     public Inscripcion obtenerPorId(int id){

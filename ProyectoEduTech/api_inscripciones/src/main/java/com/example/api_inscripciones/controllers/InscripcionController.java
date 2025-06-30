@@ -24,7 +24,7 @@ import jakarta.validation.Valid;
 public class InscripcionController {
     
     @Autowired
-    private InscripcionService usuarioService;
+    private InscripcionService inscripcionService;
 
     @GetMapping("/")
     public List<Inscripcion> obtenerTodos() {
@@ -32,7 +32,7 @@ public class InscripcionController {
     }
 
     @GetMapping("/{id}")
-    public inscripcion obtenerUno(@PathVariable int id) {
+    public Inscripcion obtenerUno(@PathVariable int id) {
         return inscripcionService.obtenerPorId(id);
     }
 

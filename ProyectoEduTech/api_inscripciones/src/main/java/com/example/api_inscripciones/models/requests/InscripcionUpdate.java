@@ -6,7 +6,7 @@ import lombok.Data;
 public class InscripcionUpdate {
     private int id;
 
-    private int usuarioId;
-    private int cursoId;
+    private String usuarioId;
+    private String cursoId;
     private String estado;
 }

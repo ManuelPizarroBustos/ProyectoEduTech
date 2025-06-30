@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.api_usuarios.models.entities.Curso;
-import com.example.api_usuarios.models.requests.CursoCreate;
-import com.example.api_usuarios.models.requests.CursoUpdate;
-import com.example.api_usuarios.repositories.CursoRepository;
+import com.example.api_cursos.models.entities.Curso;
+import com.example.api_cursos.models.requests.CursoCreate;
+import com.example.api_cursos.models.requests.CursoUpdate;
+import com.example.api_cursos.repositories.CursoRepository;
 
 @Service
 public class CursoService{
@@ -19,7 +19,7 @@ public class CursoService{
     private CursoRepository cursoRepository;
 
     public List<Curso> obtenerTodos(){
-        return cursoRepository.findById(id).orElse(null);
+        return cursoRepository.findAll();
     }
 
     public Curso obtenerPorId(int id){

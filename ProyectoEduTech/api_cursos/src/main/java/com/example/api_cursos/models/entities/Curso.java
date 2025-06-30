@@ -1,4 +1,4 @@
-package com.example.api_cursos.models;
+package com.example.api_cursos.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
