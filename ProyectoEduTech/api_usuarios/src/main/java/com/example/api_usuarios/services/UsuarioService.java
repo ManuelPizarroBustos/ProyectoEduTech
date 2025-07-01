@@ -2,6 +2,7 @@ package com.example.api_usuarios.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.example.api_usuarios.models.entities.Usuario;
 import com.example.api_usuarios.models.requests.UsuarioCreate;
 import com.example.api_usuarios.models.requests.UsuarioUpdate;
 import com.example.api_usuarios.repositories.UsuarioRepository;
+
 
 @Service
 public class UsuarioService{

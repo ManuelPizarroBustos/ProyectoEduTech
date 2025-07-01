@@ -4,6 +4,7 @@ package com.example.api_usuarios.models.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Data
 @Entity
 @Table(name = "usuario")
