@@ -6,18 +6,18 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
-import com.example.api_usuarios.controllers.UsuarioController;
+import com.example.api_usuarios.controllers.UsuarioControllerv2;
 import com.example.api_usuarios.models.entities.Usuario;
 
 @Component
 public class UsuarioModelAssembler implements RepresentationModelAssembler<Usuario, EntityModel<Usuario>> {
 
-    @SuppressWarnings("null")
+    
     @Override
     public EntityModel<Usuario> toModel(Usuario usuario) {
         return EntityModel.of(usuario,
-            linkTo(methodOn(UsuarioController.class).obtenerUno(usuario.getId())).withSelfRel(),
-            linkTo(methodOn(UsuarioController.class).obtenerTodos()).withRel("usuarios")
+            linkTo(methodOn(UsuarioControllerv2.class).obtenerUno(usuario.getId())).withSelfRel(),
+            linkTo(methodOn(UsuarioControllerv2.class).obtenerTodos()).withRel("usuarios")
         );
     }
 }

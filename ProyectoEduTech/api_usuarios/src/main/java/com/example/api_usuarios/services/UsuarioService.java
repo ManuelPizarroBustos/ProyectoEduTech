@@ -20,6 +20,8 @@ public class UsuarioService{
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    
+
     public List<Usuario> obtenerTodos(){
         return usuarioRepository.findAll();
     }
@@ -28,16 +30,19 @@ public class UsuarioService{
         return usuarioRepository.findById(id).orElse(null);
     }
 
+
     public Usuario registrar(UsuarioCreate usuario){
         try {
             Usuario nuevoUsuario = new Usuario();
+            nuevoUsuario.setId(usuario.getId());
             nuevoUsuario.setNombre(usuario.getNombre());
             nuevoUsuario.setEmail(usuario.getEmail());
             nuevoUsuario.setTelefono(usuario.getTelefono());
+            nuevoUsuario.setPassword(usuario.getPassword());
 
             return usuarioRepository.save(nuevoUsuario);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Usuario registrado");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Usuario no registrado");
         }
     }
 
@@ -50,9 +55,17 @@ public class UsuarioService{
         if(body.getNombre() != null) {
             usuario.setNombre(body.getNombre());
         }
+
+        if(body.getEmail() != null) {
+            usuario.setEmail(body.getEmail());
+        }
         
         if(body.getTelefono() != null) {
             usuario.setTelefono(body.getTelefono());
+        }
+
+        if(body.getPassword() != null) {
+            usuario.setPassword(body.getPassword());
         }
     
         return usuarioRepository.save(usuario);
@@ -66,4 +79,7 @@ public class UsuarioService{
         usuarioRepository.delete(usuario);
     
     }
+    
+
+    
 }

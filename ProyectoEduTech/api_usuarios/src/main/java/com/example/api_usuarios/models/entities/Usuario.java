@@ -1,8 +1,11 @@
 package com.example.api_usuarios.models.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Data
@@ -11,7 +14,6 @@ import lombok.*;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(nullable = false)
@@ -20,7 +22,12 @@ public class Usuario {
     @Column(nullable = false,unique = true)
     private String email;
 
+    
     @Column(nullable = false)
     private String telefono;
+    
+    @JsonIgnore
+    @Column(nullable = false)
+    private String password;
 }
     

@@ -6,6 +6,9 @@ import lombok.Data;
 @Data
 public class UsuarioCreate {
     
+    
+    private int id; 
+
     @NotBlank
     private String nombre;
     
@@ -15,4 +18,7 @@ public class UsuarioCreate {
 
     @NotBlank
     private String telefono;
+    
+    @NotBlank
+    private String password;
 }
