@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ApiUsuariosApplication",
+            "request": "launch",
+            "mainClass": "com.example.api_usuarios.ApiUsuariosApplication",
+            "projectName": "api_usuarios"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ApiCursosApplication<api_cursos>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

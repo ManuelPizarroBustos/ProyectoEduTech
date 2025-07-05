@@ -12,6 +12,7 @@ import com.example.api_usuarios.models.entities.Usuario;
 @Component
 public class UsuarioModelAssembler implements RepresentationModelAssembler<Usuario, EntityModel<Usuario>> {
 
+    @SuppressWarnings("null")
     @Override
     public EntityModel<Usuario> toModel(Usuario usuario) {
         return EntityModel.of(usuario,
